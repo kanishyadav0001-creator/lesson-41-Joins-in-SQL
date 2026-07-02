@@ -58,7 +58,7 @@ print(book)
 print()
 
 inner = pd.read_sql(
-    "SELECT author.author_name, book.book_title"
+    "SELECT author.author_name, book.book_title "
     "FROM author INNER JOIN book ON author.author_id",
     conn
 )
@@ -67,7 +67,7 @@ print(inner)
 print()
 
 left = pd.read_sql(
-    "SELECT author.author_name, book.book_title"
+    "SELECT author.author_name, book.book_title "
     "FROM author LEFT JOIN book ON author.author_id = book.author_id",
     conn
 )
@@ -86,8 +86,8 @@ print(cross)
 print()
 
 union = pd.read_sql(
-    "SELECT author_name AS name, 'Author' AS type FROM author"
-    "UNION"
+    "SELECT author_name AS name, 'Author' AS type FROM author "
+    "UNION "
     "SELECT book_title AS name,'Book' AS type FROM book",
     conn
 )
